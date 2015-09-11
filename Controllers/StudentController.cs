@@ -64,8 +64,8 @@ namespace MVC4Razor.Controllers
         public ActionResult Edit(int id)
         {
             ViewBag.Teachers = schoolContext.GetTeachers();
-            ViewBag.CurrentStudent = schoolContext.GetStudents().FirstOrDefault(item => item.Id == id);
-            return View();
+            var t = schoolContext.GetStudents().FirstOrDefault(item => item.Id == id);
+            return View(t);
         }
 
         //
@@ -76,6 +76,11 @@ namespace MVC4Razor.Controllers
         {
             try
             {
+                var keys = collection.AllKeys;
+                foreach (var item in keys)
+                {
+                    var v = collection[item];
+                }
                 // TODO: Add update logic here
 
                 return RedirectToAction("Index");

@@ -1,5 +1,5 @@
 ﻿@{
-                        //Layout = null;
+            //Layout = null;
 }
 
 <!DOCTYPE html>
@@ -11,21 +11,24 @@
 </head>
 <body>
     <div>
-        <form action="/Student/Edit" method="post">
+        @using (Html.BeginForm("Edit", "Student", FormMethod.Post))
+        {
             <table>
                 <tr>
                     <td>Id:</td>
-                    <td id="id">@ViewBag.CurrentStudent.Id</td>
+                    <td id="id">@this.Model.Id</td>
                 </tr>
                 <tr>
                     <td>Name:</td>
                     <td>
-                        <input type="text" id="name" value="@ViewBag.CurrentStudent.Name"/></td>
+                      @*    @Html.TextBox("Name",new {this.Model.Name})*@
+                        <input type="text" id="Name" name="Name" value="@this.Model.Name"/></td>
                 </tr>
                 <tr>
                     <td>Age:</td>
                     <td>
-                        <input type="text" id="age" value="@ViewBag.CurrentStudent.Age"/></td>
+                      @*  @Html.TextBox("Age",new {this.Model.Age})*@
+                        <input type="text" id="Age" name="Age" value="@this.Model.Age"/></td>
                 </tr>
                 <tr>
                     <td>Teacher:</td>
@@ -43,7 +46,7 @@
             </table>
 
             <input type="submit" title="提交" />
-        </form>
+        }
     </div>
 </body>
 </html>
