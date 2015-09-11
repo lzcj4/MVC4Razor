@@ -1,0 +1,33 @@
+﻿#a1 {
+    color: #00ff90;
+    Background: #b6ff00;
+}
+
+div {
+    background: #ff0;
+}
+
+    div h2 {
+        text-shadow: inherit;
+        color: #000;
+    }
+
+.blue {
+    color: #08f;
+}
+
+    .blue h3 {
+        background: #808080;
+        color: #f00;
+    }
+.leftpanel {
+    width:20%;
+}
+.rightpanel {
+    width:70%;
+}
+ .rightpanel div {
+     font-family:Andalus;
+        background: #808080;
+        color: #f00;
+    }

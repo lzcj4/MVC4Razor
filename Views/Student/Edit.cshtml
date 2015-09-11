@@ -1,0 +1,49 @@
+﻿@{
+                        //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div>
+        <form action="/Student/Edit" method="post">
+            <table>
+                <tr>
+                    <td>Id:</td>
+                    <td id="id">@ViewBag.CurrentStudent.Id</td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td>
+                        <input type="text" id="name" value="@ViewBag.CurrentStudent.Name"/></td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td>
+                        <input type="text" id="age" value="@ViewBag.CurrentStudent.Age"/></td>
+                </tr>
+                <tr>
+                    <td>Teacher:</td>
+                    <td>
+                        <select>
+                            <optgroup label="Teachers">
+                                @foreach (var item in ViewBag.Teachers)
+                                {
+                                    <option title="@item.Name" value="@item.Id" label="@item.Name" />
+                                }
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+            <input type="submit" title="提交" />
+        </form>
+    </div>
+</body>
+</html>
